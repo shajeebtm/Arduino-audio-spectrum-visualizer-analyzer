@@ -1,10 +1,4 @@
 
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
-
 
 # Arduino 32 band audio spectrum visualizer / analyzer
 
