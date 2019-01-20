@@ -108,6 +108,6 @@ More details of this project are available at [arduino project hub](https://crea
 
 Look at this demo video
 
-<p align="center">
+
  [![Demo Video](http://img.youtube.com/vi/GF_i0EnUEro/0.jpg)](https://youtu.be/GF_i0EnUEro)
-</p>
+
