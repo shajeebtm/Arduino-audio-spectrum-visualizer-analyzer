@@ -22,7 +22,7 @@ This project is for making a 32 band audio (music) frequency spectrum analyzer /
 4. 100nf capacitor - 2 nos
 5. 5 kilo ohms resistor -  3 nos 
 6. 10 kilo ohms resistor - 1 no
-7. 100 kilo ohms resistor - 3 nons
+7. 100 kilo ohms resistor - 2 nons
 8. 5 volt power supply (usb supply will do)
 
 Resistor values are not very strict , you may choose any closest value. Please make sure R1 & R2 (refer schematic) are of same value.
