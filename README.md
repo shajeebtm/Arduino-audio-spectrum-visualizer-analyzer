@@ -4,7 +4,7 @@
 
 ![Main Image](images/Main_photo.jpg)
 
-This project is for making a 32 band audio (music) frequency spectrum analyzer / visualizer.  Expected audience of this project is any audio enthusiast ,  student or a beginner who has basic understanding of electronic components , arduino and C programming. Components used in this project are low cost items  and are easy  to assemble.
+This project is for making a 32 band audio (music) frequency spectrum analyzer / visualizer using Arduino.  Expected audience of this project is any audio enthusiast ,  student or a beginner who has basic understanding of electronic components , arduino and C programming. Components used in this project are low cost items  and are easy  to assemble.
 
 ### Main features of this frequency spectrum analyzer are
 
