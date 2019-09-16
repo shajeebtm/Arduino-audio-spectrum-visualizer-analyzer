@@ -30,7 +30,7 @@ Resistor values are not very strict , you may choose any closest value. Please m
 ### Schematic diagram
 
 <p align="center">
-<img alt="Schematic Diagram" src="images/Arduino%20spectrum%20analyzer%20-%20schematic.png">
+<img alt="Schematic Diagram" src="images/Arduino%20spectrum%20analyzer%20-%20schematic_fixed_1.png">
 </p>
                            
 Power supply to Arduino board can given either from USB port or from 5v charger socket.  For the LED display power is fed from 5v pin on the Arduino board. Different voltages mentioned in schematic are approximate and it may vary slightly in your system. 
