@@ -120,8 +120,8 @@ void loop() {
     //  massively reducing the number of operations neccessary. However,
     //  this requires the final array to be sized to a power of 2.
     int multiplier = (SAMPLES/2) / xres;
+    for(int i = 0; i < xres; i++) data_avgs[i] = 0;
     for(int i = 0; i < SAMPLES/2; i++){
-      data_avgs[i] = 0;
       data_avgs[i/multiplier] += vReal[i];
     }
     // I believe this FFT library actually already results in porportionally
