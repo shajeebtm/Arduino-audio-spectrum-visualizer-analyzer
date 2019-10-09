@@ -108,7 +108,7 @@ void loop() {
     */
 
     // SUPER-optimized code: If xres is EXACTLY equal to SAMPLES/2
-    //  (64 / 2 = 32, it is in the case) then we can do a one-to-one
+    //  (64 / 2 = 32, it is in this case) then we can do a one-to-one
     //  mapping with no math required at all! Check out below code
     //  if more flexiblity is needed.
     for(int i = 0; i < xres; i++) data_avgs[i] = vReal[i];
