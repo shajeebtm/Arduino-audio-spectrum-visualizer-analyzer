@@ -31,7 +31,7 @@ SOFTWARE.
 #define CLK_PIN   13  // Clock pin to communicate with display
 #define DATA_PIN  11  // Data pin to communicate with display
 #define CS_PIN    10  // Control pin to communicate with display
-#define  xres 32      // Total number of  columns in the display, must be <= SAMPLES/2
+#define  xres 32      // Total number of  columns in the display, must be a power of 2 and <= SAMPLES/2
 #define  yres 8       // Total number of  rows in the display
 
 
@@ -93,6 +93,7 @@ void loop() {
 
     
     // ++ re-arrange FFT result to match with no. of columns on display ( xres )
+    /*
     int step = (SAMPLES/2)/xres; 
     int c=0;
     for(int i=0; i<(SAMPLES/2); i+=step)  
@@ -104,6 +105,31 @@ void loop() {
       data_avgs[c] = data_avgs[c]/step; 
       c++;
     }
+    */
+
+    // SUPER-optimized code: If xres is EXACTLY equal to SAMPLES/2
+    //  (64 / 2 = 32, it is in this case) then we can do a one-to-one
+    //  mapping with no math required at all! Check out below code
+    //  if more flexiblity is needed.
+    for(int i = 0; i < xres; i++) data_avgs[i] = vReal[i];
+
+    /*
+    // Semi-Optimized code: If using integer variables, the fractional
+    //  component is lopped off. We take advantage of this in order to
+    //  relate many indexes to one, effectively shrinking the array, while
+    //  massively reducing the number of operations neccessary. However,
+    //  this requires the final array to be sized to a power of 2.
+    int multiplier = (SAMPLES/2) / xres;
+    for(int i = 0; i < xres; i++) data_avgs[i] = 0;
+    for(int i = 0; i < SAMPLES/2; i++){
+      data_avgs[i/multiplier] += vReal[i];
+    }
+    // I believe this FFT library actually already results in porportionally
+    // smaller numbers given a bigger FFT size, so if I'm right comment
+    // out this line to save instructions
+    for(int i = 0; i < xres; i++) data_avgs[i] /= multiplier;
+    */
+    
     // -- re-arrange FFT result to match with no. of columns on display ( xres )
 
     
@@ -170,4 +196,3 @@ void displayModeChange() {
   }
   previousState = reading;
 }
-
